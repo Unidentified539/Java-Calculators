@@ -1,3 +1,4 @@
+package com.company;
 import java.util.Scanner;
 
 class Main {
@@ -19,8 +20,8 @@ class Main {
             System.out.println("Enter second number");
             String second_number_1 = sc.nextLine();
 
-            int inum2 = Integer.parseInt(second_number_1);
-            int inum1 = Integer.parseInt(first_number_1);
+            Double inum2 = Double.parseDouble(second_number_1);
+            Double inum1 = Double.parseDouble(first_number_1);
 
             System.out.println(inum1 + inum2);
 
@@ -33,8 +34,8 @@ class Main {
             System.out.println("Enter second number");
             String second_number_2 = sc.nextLine();
 
-            int inum3 = Integer.parseInt(first_number_2);
-            int inum4 = Integer.parseInt(second_number_2);
+            Double inum3 = Double.parseDouble(first_number_2);
+            Double inum4 = Double.parseDouble(second_number_2);
 
             System.out.println(inum3 * inum4);
 
@@ -47,8 +48,8 @@ class Main {
             System.out.println("Enter second number");
             String second_number_3 = sc.nextLine();
 
-            int inum5 = Integer.parseInt(first_number_3);
-            int inum6 = Integer.parseInt(second_number_3);
+            Double inum5 = Double.parseDouble(first_number_3);
+            Double inum6 = Double.parseDouble(second_number_3);
 
             System.out.println(inum5 / inum6);
 
@@ -62,8 +63,8 @@ class Main {
             System.out.println("Enter second number");
             String second_number_4 = sc.nextLine();
 
-            int inum7 = Integer.parseInt(first_number_4);
-            int inum8 = Integer.parseInt(second_number_4);
+            Double inum7 = Double.parseDouble(first_number_4);
+            Double inum8 = Double.parseDouble(second_number_4);
 
             System.out.println(inum7 - inum8);
 
