@@ -15,45 +15,40 @@ public class Calculator {
             int menuitem=sc.nextInt();
 
 
-       switch (menuitem) {
-           case 1:
-               System.out.println("Enter first number.");
-               a = sc.nextInt();
-               System.out.println("Enter second number ");
-                b = sc.nextInt();
-               System.out.println(a + b);
-               break;
-
-           case 2:
-               System.out.println("Enter first number");
-               a = sc.nextInt();
-               System.out.println("Enter second number");
-               b = sc.nextInt();
-               System.out.println(a - b);
-               break;
-
-           case 3:
-               System.out.println("Enter first number");
-               a = sc.nextInt();
-               System.out.println("Enter second number");
-               b= sc.nextInt();
-               System.out.println(a* b);
-               break;
-
-           case 4:
-               System.out.println("Enter first number");
-               a = sc.nextInt();
-               System.out.println("Enter second number");
-               b = sc.nextInt();
-               System.out.println(a / b);
-               break;
-
-           case 5:
-               quit=true;
-               System.out.println("Quiting...");
-               break;
-
-       }
+            switch (menuitem) {
+                case 1 -> {
+                    System.out.println("Enter first number.");
+                    a = sc.nextInt();
+                    System.out.println("Enter second number ");
+                    b = sc.nextInt();
+                    System.out.println(a + b);
+                }
+                case 2 -> {
+                    System.out.println("Enter first number");
+                    a = sc.nextInt();
+                    System.out.println("Enter second number");
+                    b = sc.nextInt();
+                    System.out.println(a - b);
+                }
+                case 3 -> {
+                    System.out.println("Enter first number");
+                    a = sc.nextInt();
+                    System.out.println("Enter second number");
+                    b = sc.nextInt();
+                    System.out.println(a * b);
+                }
+                case 4 -> {
+                    System.out.println("Enter first number");
+                    a = sc.nextInt();
+                    System.out.println("Enter second number");
+                    b = sc.nextInt();
+                    System.out.println(a / b);
+                }
+                case 5 -> {
+                    quit = true;
+                    System.out.println("Quiting...");
+                }
+            }
 
 
 
