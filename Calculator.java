@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Calculator {
     Scanner sc = new Scanner(System.in);
 
@@ -7,11 +6,12 @@ public class Calculator {
         int a,b;
         boolean quit=false;
         while(!quit){
-            System.out.println("choose 1 for addition \n"+"" +
-                    "choose 2 for subtraction\n"+
-                     "choose 3 for multiplication \n"+
-                    "choose 4 for division \n" +
-                    "choose 5 to quit");
+            System.out.println("""
+                    choose 1 for addition\s
+                    choose 2 for subtraction
+                    choose 3 for multiplication\s
+                    choose 4 for division\s
+                    choose 5 to quit""");
             int menuitem=sc.nextInt();
 
 
@@ -39,32 +39,32 @@ public class Calculator {
                 }
                 case 4 -> {
                     System.out.println("Enter first number");
-                    a = sc.nextInt();
+                    int c = sc.nextInt();
                     System.out.println("Enter second number");
-                    b = sc.nextInt();
-                    System.out.println(a / b);
+                    int e = sc.nextInt();
+                    if (c == 0) {
+                        System.out.println(0);
+                    }
+                    if (e == 0){
+                        System.out.println(0);
+                    }
+                    else {
+                        System.out.println(c / e);
+                    }
+
                 }
                 case 5 -> {
                     quit = true;
                     System.out.println("Quiting...");
                 }
+
             }
-
-
-
-
-
+            
+            
         }
 
-
-
-
-
-
+        
     }
 
-
-
-
-
+    
 }
