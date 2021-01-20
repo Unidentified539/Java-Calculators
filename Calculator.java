@@ -39,15 +39,18 @@ public class Calculator {
                 }
                 case 4 -> {
                     System.out.println("Enter first number");
-                    int c = sc.nextInt();
+                    int c = sc.nextInt();//you can still use the same variables here 
                     System.out.println("Enter second number");
                     int e = sc.nextInt();
-                    if (c == 0) {
+                    //you can use ternary operators here instead of writing another if statement here is where to read about them 
+                    //https://www.tutorialspoint.com/Java-OR-Operator-Examples
+                    //this will have the same output try and run the code i have commented out your code 
+                    if (c||e == 0) {
                         System.out.println(0);
                     }
-                    if (e == 0){
+                    /*if (e == 0){
                         System.out.println(0);
-                    }
+                    }*/
                     else {
                         System.out.println(c / e);
                     }
