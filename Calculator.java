@@ -66,13 +66,14 @@ public class Calculator {
                     int c = sc.nextInt();
                     System.out.println("Enter second number");
                     int d = sc.nextInt();
-                    if (c == 0) {
+                    //ternary operators instead of an else if statement
+                    if (c||d == 0) {
                         System.out.println("Identified");
                     }
 
-                    else if (d == 0) {
+                   /* else if (d == 0) {
                         System.out.println("Identified");
-                    }
+                    }*/
 
                     else {
                         Divide(c, d);
