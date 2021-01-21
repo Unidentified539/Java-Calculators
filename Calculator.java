@@ -1,6 +1,28 @@
+package com.company;
 import java.util.Scanner;
+
+
 public class Calculator {
     Scanner sc = new Scanner(System.in);
+
+    public static void Add(double a, double b) {
+        System.out.println(a + b);
+    }
+
+    public static void Subtract(double a, double b) {
+        System.out.println(a + b);
+    }
+
+    public static void Multiply(double a, double b) {
+        System.out.println(a + b);
+    }
+
+    public static void Divide(double a, double b) {
+        System.out.println(a + b);
+    }
+    
+
+
 
     public void menu(){
         int a,b;
@@ -21,53 +43,63 @@ public class Calculator {
                     a = sc.nextInt();
                     System.out.println("Enter second number ");
                     b = sc.nextInt();
-                    System.out.println(a + b);
+                    Add(a, b);
+
                 }
                 case 2 -> {
                     System.out.println("Enter first number");
                     a = sc.nextInt();
                     System.out.println("Enter second number");
                     b = sc.nextInt();
-                    System.out.println(a - b);
+                    Subtract(a, b);
                 }
                 case 3 -> {
                     System.out.println("Enter first number");
                     a = sc.nextInt();
                     System.out.println("Enter second number");
                     b = sc.nextInt();
-                    System.out.println(a * b);
+                    Multiply(a, b);
                 }
                 case 4 -> {
                     System.out.println("Enter first number");
-                    int c = sc.nextInt();//you can still use the same variables here 
+                    int c = sc.nextInt();
                     System.out.println("Enter second number");
-                    int e = sc.nextInt();
-                    //you can use ternary operators here instead of writing another if statement here is where to read about them 
-                    //https://www.tutorialspoint.com/Java-OR-Operator-Examples
-                    //this will have the same output try and run the code i have commented out your code 
-                    if (c||e == 0) {
-                        System.out.println(0);
-                    }
-                    /*if (e == 0){
-                        System.out.println(0);
-                    }*/
-                    else {
-                        System.out.println(c / e);
+                    int d = sc.nextInt();
+                    if (c == 0) {
+                        System.out.println("Identified");
                     }
 
+                    else if (d == 0) {
+                        System.out.println("Identified");
+                    }
+
+                    else {
+                        Divide(c, d);
+
+                    }
+
+                    
                 }
+
                 case 5 -> {
                     quit = true;
                     System.out.println("Quiting...");
                 }
 
+
+
             }
-            
-            
+
+
         }
 
-        
+
     }
 
-    
+
 }
+
+
+
+
+
