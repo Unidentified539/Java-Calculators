@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 
 public class Calculator {
+    
     Scanner sc = new Scanner(System.in);
 
     public static void Add(double a, double b) {
@@ -77,10 +78,10 @@ public class Calculator {
                         Divide(c, d);
 
                     }
-
                     
                 }
 
+                
                 case 5 -> {
                     quit = true;
                     System.out.println("Quiting...");
@@ -98,8 +99,3 @@ public class Calculator {
 
 
 }
-
-
-
-
-
