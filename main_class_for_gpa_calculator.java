@@ -1,4 +1,4 @@
-package comcompany;
+package com.company;
 
 class main_class_for_gpa_calculator {
     public static void main(String[] args) {
