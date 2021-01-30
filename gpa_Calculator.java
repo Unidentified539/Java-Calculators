@@ -127,9 +127,7 @@ public class Calc {
         }
     }
 
-    //so i created an arrayList and added all the ranges so that we can go through the file and check if its with in the range
-    //if its with in the range it returns true then we assign that range to tmp and use it as a key for our hash map then we  return
-    //the value of the hash map which is a string if its not in there we return a string that says enter a valid number
+    
     public String getGpa(double average) {
         for (int i = 0; i < box.size(); i++) {
             Range tmp = box.get(i);
