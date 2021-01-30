@@ -1,11 +1,19 @@
 package com.company;
 // Main class can be found at Main_Class file in this repo
-import java.io.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
-public class beta_Gpa_Calculator {
+public class Calc {
 
-
+    HashMap<Range, String> func=new HashMap<>();
+    List<Range>box=new ArrayList<>();
     public static void new_File() {
         try {
             File myObj = new File("data.txt");
@@ -77,8 +85,41 @@ public class beta_Gpa_Calculator {
     }
 
 
-    public static void main(String[] args) {
+    public void menu() {
 
+        Range class1 = new Range(0, 64);
+        Range class2 = new Range(65, 66);
+        Range class3 = new Range(67, 69);
+        Range class4 = new Range(70, 72);
+        Range class5 = new Range(73, 76);
+        Range class6 = new Range(77, 79);
+        Range class7 = new Range(80, 82);
+        Range class8 = new Range(83, 86);
+        Range class9 = new Range(87, 89);
+        Range class10 = new Range(90, 92);
+        Range class11 = new Range(93, 100);
+        func.put(class1, "0.0 GPA");
+        func.put(class2, "1.0 GPA");
+        func.put(class3,"1.3 GPA");
+        func.put(class4,"1.7 GPA");
+        func.put(class5,"2.0 GPA");
+        func.put(class6,"2.3 GPA");
+        func.put(class7,"2.7 GPA" );
+        func.put(class8,"3.0 GPA");
+        func.put(class9,"3.3 GPA" );
+        func.put(class10, "3.7 GPA");
+        func.put(class11, "4.0 GPA");
+        box.add(class1);
+        box.add(class2);
+        box.add(class3);
+        box.add(class4);
+        box.add(class5);
+        box.add(class6);
+        box.add(class7);
+        box.add(class8);
+        box.add(class9);
+        box.add(class10);
+        box.add(class11);
 
         Scanner sc = new Scanner(System.in);
         boolean quit = false;
@@ -87,58 +128,25 @@ public class beta_Gpa_Calculator {
         while (!quit) {
             new_File();
             read_File();
-
-
-
             System.out.println("Enter your grade average in percent form. Type 1010 to exit.");
             int grade_Average = (int) sc.nextDouble();
-            if (grade_Average <= 59) {
-                System.out.println("0.0 GPA");
-            } else if (grade_Average <= 62) {
-                System.out.println("0.7 GPA");
-
-            } else if (grade_Average <= 63) {
-                System.out.println("1.0 GPA");
-
-            } else if (grade_Average <= 69) {
-                System.out.println("1.3 GPA");
-
-            } else if (grade_Average <= 72) {
-                System.out.println("1.7 GPA");
-            } else if (grade_Average <= 76) {
-                System.out.println("2.0 GPA");
-
-            } else if (grade_Average <= 79) {
-                System.out.println("7.3 GPA");
-
-            } else if (grade_Average <= 82) {
-                System.out.println("2.7");
-
-            } else if (grade_Average <= 86) {
-                System.out.println("3.0 GPA");
-
-            } else if (grade_Average <= 89)
-                System.out.println("3.3");
-
-            else if (grade_Average <= 92) {
-                System.out.println("3.7 GPA");
-
-            } else if (grade_Average <= 100) {
-                System.out.println("4.0 GPA");
-            } else if (grade_Average == 1010) {
-                System.out.println("Quiting...");
-                quit = true;
-            } else {
-                System.out.println(" Invalid Input Please try again");
-            }
+            System.out.println(getGpa(grade_Average));
 
             write_File(grade_Average);
-
-
+        }
+    }
+ //so i created an arrayList and added all the ranges so that we can go through the file and check if its with in the range
+ //if its with in the range it returns true then we assign that range to tmp and use it as a key for our hash map then we  return 
+ //the value of the hash map which is a string if its not in there we return a string that says enter a valid number 
+    public  String getGpa(double average){
+        for (int i = 0; i <box.size() ; i++) {
+           Range tmp=box.get(i);
+           if(tmp.contains(average)){
+               return func.get(tmp);
+           }
 
         }
-
-
+      return "please enter a valid number " ;
     }
 
 
