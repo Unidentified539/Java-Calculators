@@ -1,3 +1,4 @@
+.java
 package com.company;
 // Main class can be found at Main_Class file in this repo
 
@@ -12,8 +13,83 @@ import java.util.Scanner;
 
 public class Calc {
 
+
+
+
     HashMap<Range, String> func = new HashMap<>();
     List<Range> box = new ArrayList<>();
+
+    public static void newClassfile() {
+        File obj = new File("classGpa.txt");
+        File obj2 = new File("className.txt");
+        File obj3 = new File("classGrade");
+    }
+
+   public static String writeToClass(String class_Name, double classGrade, String classGpa){
+       try {
+           FileWriter myWriter = new FileWriter("classGpa.txt");
+           myWriter.write(classGpa + " ");
+           myWriter.close();
+
+       } catch (IOException e) {
+           System.out.println("An error occurred.");
+           e.printStackTrace();
+       }
+       try {
+           FileWriter myWriter = new FileWriter("className.txt");
+           myWriter.write(class_Name+ " ");
+           myWriter.close();
+
+       } catch (IOException e) {
+           System.out.println("An error occurred.");
+           e.printStackTrace();
+       }
+       try {
+           FileWriter myWriter = new FileWriter("classGrade.txt");
+           myWriter.write(Double.toString(Double.parseDouble(classGrade+ " ")));
+           myWriter.close();
+
+       } catch (IOException e) {
+           System.out.println("An error occurred.");
+           e.printStackTrace();
+       }
+
+       return "...";
+
+   }
+
+   public static void readClass() throws FileNotFoundException {
+       Scanner sc = new Scanner(System.in);
+       File myObj = new File("data.txt");
+       Scanner myReader = new Scanner(myObj);
+       while (myReader.hasNextLine()) {
+           String classes = myReader.nextLine();
+           System.out.println("Your previous  classes was " + classes);
+       }
+       myReader.close();
+   }
+
+    public static void deleteFile(String fileToDelete) {
+        File myObj = new File(fileToDelete);
+        if (myObj.delete()) {
+            System.out.println();
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public static void new_File() throws IOException {
         File myObj = new File("data.txt");
@@ -31,7 +107,7 @@ public class Calc {
                 System.out.println("Would you like to erase your previous grade average? y/n");
                 String y_n = sc.nextLine();
                 if (y_n.equals("y")) {
-                    delete_File();
+                    deleteFile("data.txt");
                 } else if (y_n.equals("n")) {
                     System.out.println("okay");
                 } else {
@@ -61,16 +137,6 @@ public class Calc {
     }
 
 
-    public static void delete_File() {
-        File myObj = new File("data.txt");
-        if (myObj.delete()) {
-            System.out.println();
-        } else {
-            System.out.println("Failed to delete the file.");
-        }
-
-
-    }
 
 
     public void menu() throws IOException {
@@ -127,7 +193,7 @@ public class Calc {
         }
     }
 
-    
+
     public String getGpa(double average) {
         for (int i = 0; i < box.size(); i++) {
             Range tmp = box.get(i);
