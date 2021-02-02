@@ -1,4 +1,9 @@
 # Java-Calculators
+<h1> READ THIS </h1>
+
+<h1> Description </h1>
+  <p>This is an guide to installing java. Email Solomonaziel9@gmail.com for any questions or suggestions.</p>
+  
 <h1>How to download and install prebuilt OpenJDK packages</h1>
 <h2>JDK 9 &amp; Later</h2>
 <p>Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of&nbsp;<a href="https://jdk.java.net/">jdk.java.net</a>&nbsp;as&nbsp;<code>.tar.gz</code>&nbsp;or&nbsp;<code>.zip</code>&nbsp;archives.</p>
