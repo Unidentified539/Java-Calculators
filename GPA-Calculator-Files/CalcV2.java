@@ -1,4 +1,5 @@
 package com.company;
+// Main class can be found at Main_Class file in this repo
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -88,6 +89,7 @@ public class CalcV2 {
 
 
 
+
     public static void write_File(double writeGradeAverage, String writeClass, String writeClass2, String writeClass3, String writeClass4, String writeClass5, String writeClass6, String writeClass7) {
         try {
             FileWriter myWriter = new FileWriter("data.txt");
@@ -109,6 +111,62 @@ public class CalcV2 {
         }
 
     }
+
+    public static void newTri(String triName1,String triName2,String triName3) {
+        try {
+            File myObj = new File("trimesterData.txt");
+            if (myObj.createNewFile()) {
+                String result = "Done";
+            } else {
+                String status = "file on machine";
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        try {
+            FileWriter myWriter = new FileWriter("trimesterData.txt");
+            myWriter.write(triName1 + " " + triName2 + " " + triName3);
+            myWriter.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void writeClass(File fileToWrite, String writeThis) {
+        try {
+            File myObj = new File("ClassData.txt");
+            if (myObj.createNewFile()) {
+                String result = "Done";
+            }
+            else {
+                String status = "file on machine";
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+
+
+        try {
+            FileWriter myWriter = new FileWriter(fileToWrite);
+            myWriter.write(writeThis);
+            myWriter.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 
 
 
@@ -137,8 +195,8 @@ public class CalcV2 {
         RangeV2 class9 = new RangeV2(87, 89);
         RangeV2 class10 = new RangeV2(90, 92);
         RangeV2 class11 = new RangeV2(93, 100);
-        func.put(class1, "0.0 GPA");
-        func.put(class2, "1.0 GPA");
+        func.put(class1,"0.0 GPA");
+        func.put(class2,"1.0 GPA");
         func.put(class3,"1.3 GPA");
         func.put(class4,"1.7 GPA");
         func.put(class5,"2.0 GPA");
@@ -146,8 +204,8 @@ public class CalcV2 {
         func.put(class7,"2.7 GPA" );
         func.put(class8,"3.0 GPA");
         func.put(class9,"3.3 GPA" );
-        func.put(class10, "3.7 GPA");
-        func.put(class11, "4.0 GPA");
+        func.put(class10,"3.7 GPA");
+        func.put(class11,"4.0 GPA");
         box.add(class1);
         box.add(class2);
         box.add(class3);
@@ -174,6 +232,7 @@ public class CalcV2 {
             String className1 = sc.next();
             System.out.println("Enter your " + className1 +   " grade point average 1 - 100");
             double gradeAverageForClass1 = sc.nextDouble();
+
 
             System.out.println("Enter your second class name");
             String className2 = sc.next();
@@ -208,8 +267,13 @@ public class CalcV2 {
 
 
             double grade_Average_Classes = gradeAverageForClass1 + gradeAverageForClass2 + gradeAverageForClass3 + gradeAverageForClass4 + gradeAverageForClass5 + gradeAverageForClass6 + gradeAverageForClass7 / 7;
-            getGpa(grade_Average_Classes);
+            String gpa = getGpa(grade_Average_Classes);
             write_File(grade_Average_Classes, className1,className2,className3,className4,className5,className6,className7);
+
+            writeClass(new File("ClassData.txt"), gpa);
+
+            
+
             if (grade_Average_Classes == 1010) {
                 quit = true;
             }
@@ -224,8 +288,8 @@ public class CalcV2 {
 
 
         }
-        return "";
 
+        return null;
     }
 
 }
